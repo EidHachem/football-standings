@@ -1,0 +1,81 @@
+.leagues {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #677eb0;
+}
+
+.league {
+  display: flex;
+  padding: 0.2em;
+  min-height: 10em;
+}
+
+.league:nth-child(3n) {
+  background-color: #3e61a3;
+}
+
+.league:nth-child(2) {
+  background-color: #3e61a3;
+}
+
+.league:nth-child(7) {
+  background-color: #3e61a3;
+}
+
+.league:nth-child(9) {
+  background-color: #677eb0;
+}
+
+.league:nth-child(10) {
+  background-color: #3e61a3;
+}
+
+.league:nth-child(11) {
+  background-color: #3e61a3;
+}
+
+.league:nth-child(12) {
+  background-color: #677eb0;
+}
+
+.league:nth-child(13) {
+  background-color: #677eb0;
+}
+
+.league:nth-child(14) {
+  background-color: #3e61a3;
+}
+
+.league:nth-child(19) {
+  background-color: #3e61a3;
+}
+
+.upper-league {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.league-name {
+  align-self: flex-end;
+  color: #fff;
+  margin: 0.5em 0;
+}
+
+.image {
+  max-width: 90%;
+}
+
+.league-btn {
+  border: none;
+  background-color: #4369b2;
+  cursor: pointer;
+}
+
+h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.1rem;
+  padding: 0.2em 0;
+}
