@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchLeagues } from '../Redux/leaguesSlice/leaguesSlice';
 import { BiRightArrowCircle } from 'react-icons/bi';
+import { fetchLeagues } from '../Redux/leaguesSlice/leaguesSlice';
 import './Leagues.css';
 
 const Leagues = () => {

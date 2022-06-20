@@ -4,6 +4,12 @@
   background-color: #677eb0;
 }
 
+.league {
+  display: flex;
+  padding: 0.2em;
+  min-height: 10em;
+}
+
 .league:nth-child(3n) {
   background-color: #3e61a3;
 }
@@ -42,12 +48,6 @@
 
 .league:nth-child(19) {
   background-color: #3e61a3;
-}
-
-.league {
-  display: flex;
-  padding: 0.2em;
-  min-height: 10em;
 }
 
 .upper-league {

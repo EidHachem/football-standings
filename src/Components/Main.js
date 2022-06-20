@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
+import { BiRightArrowCircle } from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchLeagues } from '../Redux/leaguesSlice/leaguesSlice';
-import { BiRightArrowCircle } from 'react-icons/bi';
 import './Main.css';
 
 const Main = () => {
@@ -14,7 +14,10 @@ const Main = () => {
 
   return (
     <div className="main-container">
-      <p className="total">Total Available Leagues: {leagues.length}</p>
+      <p className="total">
+        Total Available Leagues:
+        {leagues.length}
+      </p>
       <div className="lower-container">
         <div className="leagues-logos">
           {leagues.map((league) => (

@@ -5,7 +5,7 @@ const BASE_URL = 'https://api-football-standings.azharimm.site/leagues';
 export const fetchLeagues = createAsyncThunk('leagues/fetchLeagues', async () => {
   const response = await fetch(BASE_URL);
   const data = await response.json();
-  const leagues = data['data'].map((league, i) => ({
+  const leagues = data.data.map((league, i) => ({
     id: league.id,
     name: league.name,
     logo: league.logos.light,
@@ -17,7 +17,7 @@ export const fetchLeagues = createAsyncThunk('leagues/fetchLeagues', async () =>
 export const fetchLeaguesSeasons = createAsyncThunk('leagues/fetchLeaguesSeasons', async (id) => {
   const response = await fetch(`${BASE_URL}${id}/seasons`);
   const seasonsData = await response.json();
-  const seasons = seasonsData['data'].map((season) => ({
+  const seasons = seasonsData.data.map((season) => ({
     id: season.id,
     name: season.name,
     logo: season.logos.light,
