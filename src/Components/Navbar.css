@@ -1,0 +1,11 @@
+.nav-container {
+  padding: 0.2em 0.6em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 0.3em;
+}

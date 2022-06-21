@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiRightArrowCircle } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 import { fetchLeagues } from '../Redux/leaguesSlice/leaguesSlice';
 import './Leagues.css';
 
@@ -10,8 +11,8 @@ const Leagues = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!leagues.length) dispatch(fetchLeagues());
-  }, [dispatch, leagues.length]);
+    dispatch(fetchLeagues());
+  }, [dispatch]);
 
   return (
     <>
@@ -26,15 +27,17 @@ const Leagues = () => {
                 <img src={league.logo} alt={league.name} className="image" />
               </div>
               <div className="upper-league">
-                <BiRightArrowCircle
-                  className="league-btn"
-                  style={{
-                    width: '25px',
-                    height: '25px',
-                    color: '#fff',
-                    background: 'transparent',
-                  }}
-                />
+                <Link to={`/${league.id}`} state={{ id: league.id }}>
+                  <BiRightArrowCircle
+                    className="league-btn"
+                    style={{
+                      width: '25px',
+                      height: '25px',
+                      color: '#fff',
+                      background: 'transparent',
+                    }}
+                  />
+                </Link>
                 <p className="league-name">{league.name}</p>
               </div>
             </div>
