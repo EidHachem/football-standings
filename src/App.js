@@ -16,10 +16,13 @@ function App() {
       case '/Leagues':
         setTitle('All leagues');
         break;
+      case '/:id':
+        setTitle('Standings');
+        break;
       default:
-        setTitle('Top Teams');
+        setTitle('Standings');
     }
-  });
+  }, [window.location.pathname]);
 
   return (
     <div>
