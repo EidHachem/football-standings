@@ -14,24 +14,12 @@ export const fetchLeagues = createAsyncThunk('leagues/fetchLeagues', async () =>
   return leagues;
 });
 
-export const fetchLeaguesSeasons = createAsyncThunk('leagues/fetchLeaguesSeasons', async (id) => {
-  const response = await fetch(`${BASE_URL}${id}/seasons`);
-  const seasonsData = await response.json();
-  const seasons = seasonsData.data.map((season) => ({
-    id: season.id,
-    name: season.name,
-    logo: season.logos.light,
-  }));
-  return seasons;
-});
-
 const options = {
   name: 'leagues',
   initialState: [],
   reducers: {},
   extraReducers: {
     [fetchLeagues.fulfilled]: (state, action) => action.payload,
-    [fetchLeaguesSeasons.fulfilled]: (state, action) => action.payload,
   },
 };
 
