@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { BiRightArrowCircle } from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { FaMicrophone } from 'react-icons/fa';
+import { IoChevronBackOutline, IoSettingsOutline } from 'react-icons/io5';
 import { fetchLeagues } from '../Redux/leaguesSlice/leaguesSlice';
 import Leagues from './Leagues';
 import './Main.css';
@@ -16,6 +18,14 @@ const Main = () => {
 
   return (
     <>
+      <div className="nav-container">
+        <Link to="/"><IoChevronBackOutline style={{ color: '#fff' }} /></Link>
+        <p>Top teams</p>
+        <div className="nav-icons">
+          <FaMicrophone />
+          <IoSettingsOutline />
+        </div>
+      </div>
       <div className="main-container">
         <p className="total">
           Total Available Leagues:

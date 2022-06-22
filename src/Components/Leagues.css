@@ -1,7 +1,7 @@
 .leagues {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background-color: #677eb0;
+  background-color: #3e61a3;
 }
 
 .league {
@@ -10,44 +10,12 @@
   min-height: 10em;
 }
 
-.league:nth-child(3n) {
-  background-color: #3e61a3;
-}
-
-.league:nth-child(2) {
-  background-color: #3e61a3;
-}
-
-.league:nth-child(7) {
-  background-color: #3e61a3;
-}
-
-.league:nth-child(9) {
+.league:nth-child(4n + 2) {
   background-color: #677eb0;
 }
 
-.league:nth-child(10) {
-  background-color: #3e61a3;
-}
-
-.league:nth-child(11) {
-  background-color: #3e61a3;
-}
-
-.league:nth-child(12) {
+.league:nth-child(4n + 3) {
   background-color: #677eb0;
-}
-
-.league:nth-child(13) {
-  background-color: #677eb0;
-}
-
-.league:nth-child(14) {
-  background-color: #3e61a3;
-}
-
-.league:nth-child(19) {
-  background-color: #3e61a3;
 }
 
 .upper-league {
