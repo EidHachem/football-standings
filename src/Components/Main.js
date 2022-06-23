@@ -28,7 +28,10 @@ const Main = () => {
       </div>
       <div className="main-container">
         <p className="total">
-          Total Available Leagues:
+          Total Available
+          &nbsp;
+          Leagues:
+          {' '}
           {leagues.length}
         </p>
         <div className="lower-container">

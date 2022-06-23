@@ -12,7 +12,7 @@ const LeagueDetails = () => {
   const [title, setTitle] = useState('Top Teams');
   const dispatch = useDispatch();
   const location = useLocation();
-  const { id } = location.state;
+  const { id } = location.state || {};
 
   useEffect(() => {
     dispatch(fetchLeaguesDetails(id));
