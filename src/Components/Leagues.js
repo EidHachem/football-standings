@@ -23,23 +23,25 @@ const Leagues = () => {
         <div className="leagues">
           {leagues.map((league) => (
             <div className="league" key={league.id}>
-              <div>
-                <img src={league.logo} alt={league.name} className="image" />
-              </div>
-              <div className="upper-league">
-                <Link to={`/${league.id}`} state={{ id: league.id }}>
-                  <BiRightArrowCircle
-                    className="league-btn"
-                    style={{
-                      width: '25px',
-                      height: '25px',
-                      color: '#fff',
-                      background: 'transparent',
-                    }}
-                  />
-                </Link>
-                <p className="league-name">{league.name}</p>
-              </div>
+              <Link key={league.id} to={`/${league.id}`} state={{ id: league.id }}>
+                <div className="league" key={league.id}>
+                  <div>
+                    <img src={league.logo} alt={league.name} className="image" />
+                  </div>
+                  <div className="upper-league">
+                    <BiRightArrowCircle
+                      className="league-btn"
+                      style={{
+                        width: '25px',
+                        height: '25px',
+                        color: '#fff',
+                        background: 'transparent',
+                      }}
+                    />
+                    <p className="league-name">{league.name}</p>
+                  </div>
+                </div>
+              </Link>
             </div>
           ))}
         </div>

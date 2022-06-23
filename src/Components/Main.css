@@ -49,3 +49,7 @@
   align-self: center;
   margin-right: 1em;
 }
+
+.nav-container p {
+  font-size: 1.1rem;
+}

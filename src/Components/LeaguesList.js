@@ -20,32 +20,43 @@ const LeaguesList = () => {
     <>
       <div className="nav-container">
         <Link to="/"><IoChevronBackOutline style={{ color: '#fff' }} /></Link>
-        <p>title</p>
+        <p>All Leagues</p>
         <div className="nav-icons">
           <FaMicrophone />
           <IoSettingsOutline />
         </div>
       </div>
-      <div className="grid-container">
-        <div>
-          <h2>club</h2>
-        </div>
-        <div>
-          Total teams:
-          {' '}
-          {leagues.length}
-        </div>
-        {leagues.map((league) => (
-          <div key={league.name} className="club-container">
-            <div className="name-logo">
-              <img src={league.logo} alt={league.name} />
-              <p>{league.name}</p>
-            </div>
-            <div className="points-arrow">
-              <BiRightArrowCircle />
-            </div>
+      <div>
+        <div className="league-list-container">
+          <div className="total">
+            Total teams:
+            {' '}
+            {leagues.length}
           </div>
-        ))}
+          <div className="leagues-logos">
+            {leagues.map((league) => (
+              <div key={league.name}>
+                <div>
+                  <img src={league.logo} alt={league.name} style={{ width: '25px', height: '25px' }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="head">All available leagues</div>
+        <div>
+          {leagues.map((league) => (
+            <div key={league.name} className="club-container">
+              <div className="name-logo">
+                <img src={league.logo} alt={league.name} />
+                <p>{league.name}</p>
+              </div>
+              <div className="points-arrow">
+                <BiRightArrowCircle />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

@@ -30,3 +30,33 @@
   width: 20px;
   height: 20px;
 }
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  min-height: 18em;
+  padding: 0 1em;
+}
+
+.details-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(../assets/Untitled\ design.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.clubs-logos {
+  padding-left: 1em;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: auto auto;
+  z-index: 3;
+}
