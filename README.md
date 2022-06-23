@@ -2,6 +2,12 @@
 
 Football standings is a mobile friendly webApp that provide leagues standing from the most watched leagues around the world using the [Azharimm API](https://github.com/azharimm/football-standings-api).
 
+## Images
+
+![alt text](https://i.postimg.cc/kXFdCZsQ/FS-details-Page.png)
+![alt text](https://i.postimg.cc/LshdzspD/FS-home-Page.png)
+![alt text](https://i.postimg.cc/cLFygnV6/FS-leagues-Page.png)
+
 ## Built With
 
 - HTML
@@ -10,6 +16,10 @@ Football standings is a mobile friendly webApp that provide leagues standing fro
 - React JS
 - Redux
 - Webpack
+
+## Presentation Video
+
+[Loom video](https://www.loom.com/share/d9c10a5db03b4d8a84ed900c333ccb58)
 
 ## Getting Started
 

@@ -19,7 +19,7 @@ const Main = () => {
   return (
     <>
       <div className="nav-container">
-        <Link to="/"><IoChevronBackOutline style={{ color: '#fff', opacity: '0' }} /></Link>
+        <Link to="/"><IoChevronBackOutline style={{ color: '#fff', opacity: '0', cursor: 'auto' }} /></Link>
         <p>Top teams</p>
         <div className="nav-icons">
           <FaMicrophone />
