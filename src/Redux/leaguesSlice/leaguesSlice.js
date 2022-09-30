@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const BASE_URL = 'https://api-football-standings.azharimm.site/leagues';
+const BASE_URL = 'https://api-football-standings.azharimm.dev/leagues';
 
 export const fetchLeagues = createAsyncThunk('leagues/fetchLeagues', async () => {
   const response = await fetch(BASE_URL);
