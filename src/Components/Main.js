@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BiRightArrowCircle } from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { FaMicrophone } from 'react-icons/fa';
-import { IoChevronBackOutline, IoSettingsOutline } from 'react-icons/io5';
+import { FaSearch } from 'react-icons/fa';
+import { IoChevronBackOutline } from 'react-icons/io5';
 import { fetchLeagues } from '../Redux/leaguesSlice/leaguesSlice';
 import Leagues from './Leagues';
 import './Main.css';
@@ -11,6 +11,8 @@ import './Main.css';
 const Main = () => {
   const leagues = useSelector((state) => state.leagues);
   const dispatch = useDispatch();
+  const [search, setSearch] = useState(false);
+  const [target, setTarget] = useState('');
 
   useEffect(() => {
     if (!leagues.length) dispatch(fetchLeagues());
@@ -24,8 +26,12 @@ const Main = () => {
         </Link>
         <p>Top teams</p>
         <div className="nav-icons">
-          <FaMicrophone />
-          <IoSettingsOutline />
+          <FaSearch
+            onClick={() => {
+              setSearch(!search);
+            }}
+            style={{ cursor: 'pointer' }}
+          />
         </div>
       </div>
       <div className="main-container">
@@ -56,7 +62,7 @@ const Main = () => {
           </Link>
         </div>
       </div>
-      <Leagues />
+      <Leagues target={target} search={search} setTarget={setTarget} />
     </>
   );
 };

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiRightArrowCircle } from 'react-icons/bi';
@@ -5,8 +6,11 @@ import { Link } from 'react-router-dom';
 import { fetchLeagues } from '../Redux/leaguesSlice/leaguesSlice';
 import './Leagues.css';
 
-const Leagues = () => {
+const Leagues = ({ target, search, setTarget }) => {
   const leagues = useSelector((state) => state.leagues);
+
+  // eslint-disable-next-line max-len
+  const filteredLeagues = leagues.filter((league) => league.name.toLowerCase().includes(target.toLowerCase()));
 
   const dispatch = useDispatch();
 
@@ -20,8 +24,19 @@ const Leagues = () => {
         <div>
           <h2>International leagues</h2>
         </div>
+        {search && (
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="search by leauge name"
+              className="search"
+              value={target}
+              onChange={(e) => setTarget(e.target.value)}
+            />
+          </div>
+        )}
         <div className="leagues">
-          {leagues.slice(0, leagues.length - 1).map((league) => (
+          {filteredLeagues.slice(0, leagues.length - 1).map((league) => (
             <div className="league main-league" key={league.id}>
               <Link key={league.id} to={`/${league.id}`} state={{ id: league.id }}>
                 <div className="league" key={league.id}>

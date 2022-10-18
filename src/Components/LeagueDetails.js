@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiRightArrowCircle } from 'react-icons/bi';
 import { useLocation, Link } from 'react-router-dom';
-import { FaMicrophone } from 'react-icons/fa';
-import { IoChevronBackOutline, IoSettingsOutline } from 'react-icons/io5';
+import { FaSearch } from 'react-icons/fa';
+import { IoChevronBackOutline } from 'react-icons/io5';
 import { fetchLeaguesDetails } from '../Redux/detailsSlice/detailsSlice';
 import './LeagueDetails.css';
 
@@ -13,6 +13,12 @@ const LeagueDetails = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const { id } = location.state || {};
+
+  const [search, setSearch] = useState(false);
+  const [target, setTarget] = useState('');
+
+  // eslint-disable-next-line max-len
+  const filteredLeagues = details.filter((league) => league.name.toLowerCase().includes(target.toLowerCase()));
 
   useEffect(() => {
     dispatch(fetchLeaguesDetails(id));
@@ -88,17 +94,22 @@ const LeagueDetails = () => {
   return (
     <>
       <div className="nav-container">
-        <Link to="/"><IoChevronBackOutline style={{ color: '#fff' }} /></Link>
+        <Link to="/">
+          <IoChevronBackOutline style={{ color: '#fff' }} />
+        </Link>
         <p>{title}</p>
         <div className="nav-icons">
-          <FaMicrophone />
-          <IoSettingsOutline />
+          <FaSearch
+            onClick={() => {
+              setSearch(!search);
+            }}
+            style={{ cursor: 'pointer' }}
+          />
         </div>
       </div>
       <div className="details-container">
         <div className="total">
           Total teams:
-          {' '}
           {details.length}
         </div>
         <div className="clubs-logos">
@@ -110,9 +121,20 @@ const LeagueDetails = () => {
         </div>
       </div>
       <div className="head">Teams</div>
+      {search && (
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="search by leauge name"
+            className="search"
+            value={target}
+            onChange={(e) => setTarget(e.target.value)}
+          />
+        </div>
+      )}
       <div className="grid-container">
         <div>
-          {details.map((club) => (
+          {filteredLeagues.map((club) => (
             <div key={club.name} className="club-container">
               <div className="name-logo">
                 <img src={club.logo} alt={club.name} />

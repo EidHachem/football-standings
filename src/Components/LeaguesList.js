@@ -1,14 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiRightArrowCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
-import { FaMicrophone } from 'react-icons/fa';
-import { IoChevronBackOutline, IoSettingsOutline } from 'react-icons/io5';
+import { FaSearch } from 'react-icons/fa';
+import { IoChevronBackOutline } from 'react-icons/io5';
 import { fetchLeagues } from '../Redux/leaguesSlice/leaguesSlice';
 import './LeaguesList.css';
 
 const LeaguesList = () => {
   const leagues = useSelector((state) => state.leagues);
+  const [search, setSearch] = useState(false);
+  const [target, setTarget] = useState('');
+
+  // eslint-disable-next-line max-len
+  const filteredLeagues = leagues.filter((league) => league.name.toLowerCase().includes(target.toLowerCase()));
 
   const dispatch = useDispatch();
 
@@ -24,8 +29,12 @@ const LeaguesList = () => {
         </Link>
         <p>All Leagues</p>
         <div className="nav-icons">
-          <FaMicrophone />
-          <IoSettingsOutline />
+          <FaSearch
+            onClick={() => {
+              setSearch(!search);
+            }}
+            style={{ cursor: 'pointer' }}
+          />
         </div>
       </div>
       <div>
@@ -45,8 +54,19 @@ const LeaguesList = () => {
           </div>
         </div>
         <div className="head">All available leagues</div>
+        {search && (
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="search by leauge name"
+              className="search"
+              value={target}
+              onChange={(e) => setTarget(e.target.value)}
+            />
+          </div>
+        )}
         <div>
-          {leagues.map((league) => (
+          {filteredLeagues.map((league) => (
             <div key={league.name} className="club-container">
               <div className="name-logo">
                 <img src={league.logo} alt={league.name} />

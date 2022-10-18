@@ -45,9 +45,10 @@
 
 h2 {
   color: #fff;
-  margin: 0;
   font-size: 1.1rem;
   padding: 0.2em 0;
+  text-align: center;
+  margin: 0.3em auto;
 }
 
 @media (min-width: 768px) {
