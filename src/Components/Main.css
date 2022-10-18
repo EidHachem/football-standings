@@ -85,6 +85,14 @@
   outline: none;
 }
 
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 @media (min-width: 768px) {
   .main-container {
     min-height: 60vh;
@@ -132,7 +140,7 @@
   .main-icon {
     position: absolute;
     bottom: 10%;
-    right: 30%;
+    right: 10%;
     z-index: 4;
     opacity: 1;
     width: 50px !important;

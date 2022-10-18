@@ -7,16 +7,29 @@ import { IoChevronBackOutline } from 'react-icons/io5';
 import { fetchLeagues } from '../Redux/leaguesSlice/leaguesSlice';
 import Leagues from './Leagues';
 import './Main.css';
+import Loader from './Loader';
 
 const Main = () => {
   const leagues = useSelector((state) => state.leagues);
   const dispatch = useDispatch();
   const [search, setSearch] = useState(false);
   const [target, setTarget] = useState('');
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 3000);
     if (!leagues.length) dispatch(fetchLeagues());
-  }, [dispatch, leagues.length]);
+  }, [loader, dispatch, leagues.length]);
+
+  if (loader) {
+    return (
+      <div className="loader">
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <>

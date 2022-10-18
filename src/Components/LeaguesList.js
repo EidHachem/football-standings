@@ -62,6 +62,8 @@ const LeaguesList = () => {
               className="search"
               value={target}
               onChange={(e) => setTarget(e.target.value)}
+              // eslint-disable-next-line jsx-a11y/no-autofocus
+              autoFocus
             />
           </div>
         )}
