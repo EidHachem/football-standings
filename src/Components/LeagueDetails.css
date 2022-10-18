@@ -60,3 +60,42 @@
   grid-template-rows: auto auto;
   z-index: 3;
 }
+
+@media (min-width: 768px) {
+  .details-container {
+    min-height: 60vh;
+  }
+
+  .details-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url(../assets/Untitled\ design.png);
+    background-size: cover;
+    background-position: 100% 90%;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+  }
+
+  .clubs-logos {
+    padding: 2em;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: auto auto;
+    z-index: 3;
+  }
+
+  .clubs-logos img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .head {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0.5em auto;
+  }
+}

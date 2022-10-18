@@ -19,7 +19,9 @@ const Main = () => {
   return (
     <>
       <div className="nav-container">
-        <Link to="/"><IoChevronBackOutline style={{ color: '#fff', opacity: '0', cursor: 'auto' }} /></Link>
+        <Link to="/">
+          <IoChevronBackOutline style={{ color: '#fff', opacity: '0', cursor: 'auto' }} />
+        </Link>
         <p>Top teams</p>
         <div className="nav-icons">
           <FaMicrophone />
@@ -28,17 +30,14 @@ const Main = () => {
       </div>
       <div className="main-container">
         <p className="total">
-          Total Available
-          &nbsp;
-          Leagues:
-          {' '}
+          Total Available &nbsp; Leagues:
           {leagues.length}
         </p>
         <div className="lower-container">
           <div className="leagues-logos">
             {leagues.map((league) => (
               <div key={league.id}>
-                <img src={league.logo} alt={league.name} style={{ width: '25px', height: '25px' }} />
+                <img src={league.logo} alt={league.name} className="logo" />
               </div>
             ))}
           </div>

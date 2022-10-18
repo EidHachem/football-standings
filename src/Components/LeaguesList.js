@@ -19,7 +19,9 @@ const LeaguesList = () => {
   return (
     <>
       <div className="nav-container">
-        <Link to="/"><IoChevronBackOutline style={{ color: '#fff' }} /></Link>
+        <Link to="/">
+          <IoChevronBackOutline style={{ color: '#fff' }} />
+        </Link>
         <p>All Leagues</p>
         <div className="nav-icons">
           <FaMicrophone />
@@ -30,14 +32,13 @@ const LeaguesList = () => {
         <div className="league-list-container">
           <div className="total">
             Total teams:
-            {' '}
             {leagues.length}
           </div>
           <div className="leagues-logos">
             {leagues.map((league) => (
               <div key={league.name}>
                 <div>
-                  <img src={league.logo} alt={league.name} style={{ width: '25px', height: '25px' }} />
+                  <img src={league.logo} alt={league.name} className="logo" />
                 </div>
               </div>
             ))}

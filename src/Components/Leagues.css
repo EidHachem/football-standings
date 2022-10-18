@@ -49,3 +49,59 @@ h2 {
   font-size: 1.1rem;
   padding: 0.2em 0;
 }
+
+@media (min-width: 768px) {
+  .leagues {
+    grid-template-columns: repeat(3, 1fr);
+    border: none;
+    gap: 0.5em;
+  }
+
+  .main-league {
+    display: flex;
+    border: 3px solid #5f90ad;
+    border-radius: 0.4em;
+    min-height: 15em;
+    background-color: rgba(115, 92, 172, 0.5);
+  }
+
+  .league {
+    position: relative;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .league > * {
+    text-decoration: none;
+  }
+
+  .league:nth-child(4n + 2) {
+    background-color: rgba(115, 92, 172, 0.5);
+  }
+
+  .league:nth-child(4n + 3) {
+    background-color: rgba(115, 92, 172, 0.5);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1em auto;
+  }
+
+  .upper-league {
+    display: block;
+  }
+
+  .league-btn {
+    display: none;
+  }
+
+  .league-name {
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+    min-width: 100%;
+    min-height: 1.5em;
+  }
+}

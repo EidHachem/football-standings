@@ -21,8 +21,8 @@ const Leagues = () => {
           <h2>International leagues</h2>
         </div>
         <div className="leagues">
-          {leagues.map((league) => (
-            <div className="league" key={league.id}>
+          {leagues.slice(0, leagues.length - 1).map((league) => (
+            <div className="league main-league" key={league.id}>
               <Link key={league.id} to={`/${league.id}`} state={{ id: league.id }}>
                 <div className="league" key={league.id}>
                   <div>
